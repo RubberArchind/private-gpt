@@ -26,7 +26,7 @@ services:
     profiles:
       - ""
       - ollama-cpu
-      - ollama-cuda
+      # - ollama-cuda
       - ollama-api
     depends_on:
       ollama:
@@ -84,7 +84,7 @@ services:
     profiles:
       - ""
       - ollama-cpu
-      - ollama-cuda
+      # - ollama-cuda
       - ollama-api
 
   # Ollama service for the CPU mode
@@ -99,18 +99,18 @@ services:
       - ollama-cpu
 
   # Ollama service for the CUDA mode
-  ollama-cuda:
-    image: ollama/ollama:latest
-    ports:
-      - "11434:11434"
-    volumes:
-      - ./models:/root/.ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
-    profiles:
-      - ollama-cuda
+  # ollama-cuda:
+  #   image: ollama/ollama:latest
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ./models:/root/.ollama
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: 1
+  #             capabilities: [gpu]
+  #   profiles:
+  #     - ollama-cuda
