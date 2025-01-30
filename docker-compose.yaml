@@ -22,8 +22,7 @@ services:
       HF_TOKEN: ${HF_TOKEN:-}
     profiles:
       - ""
-      - ollama-cpu
-      - ollama-cuda
+      - ollama-cpu      
       - ollama-api
     depends_on:
       - ollama
@@ -44,7 +43,7 @@ services:
       - "8001:8001"
     environment:
       PORT: 8001
-      PGPT_PROFILES: local
+      PGPT_PROFILES: "ollama make run"
       HF_TOKEN: ${HF_TOKEN}
     profiles:
       - llamacpp-cpu
