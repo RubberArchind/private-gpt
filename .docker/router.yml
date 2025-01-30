@@ -7,7 +7,7 @@ http:
           path: /
         servers:
           - url: http://ollama-cpu:11434
-          - url: http://ollama-cuda:11434
+          # - url: http://ollama-cuda:11434
           - url: http://host.docker.internal:11434
 
   routers:
