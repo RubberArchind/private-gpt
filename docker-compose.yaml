@@ -43,7 +43,7 @@ services:
       - "8001:8001"
     environment:
       PORT: 8001
-      PGPT_PROFILES: "ollama make run"
+      PGPT_PROFILES: ollama
       HF_TOKEN: ${HF_TOKEN}
     profiles:
       - llamacpp-cpu
